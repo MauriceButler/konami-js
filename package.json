@@ -1,0 +1,36 @@
+{
+  "name": "konami-js",
+  "version": "0.0.0",
+  "description": "Multiple input support for konami code (Keyboard and Touch)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/MauriceButler/konami-js.git"
+  },
+  "keywords": [
+    "konami",
+    "code",
+    "keyboard",
+    "touch",
+    "touchscreen",
+    "phone",
+    "iphone",
+    "android",
+    "secret",
+    "easter",
+    "egg"
+  ],
+  "author": "Maurice Butler <maurice.butler@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MauriceButler/konami-js/issues"
+  },
+  "homepage": "https://github.com/MauriceButler/konami-js",
+  "dependencies": {
+    "konami-touch": "0.0.0",
+    "konami-keyboard": "0.0.0"
+  }
+}
