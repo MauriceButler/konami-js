@@ -168,6 +168,8 @@ function GestureDetector(target){
 
     interact.on('start', this.target, this.__boundStart = this._start.bind(this));
 
+    interact.on('drag', this.target, this.__boundStart = this._drag.bind(this));
+
     interact.on('end', this.target, this.__boundEnd = this._end.bind(this));
 
     this.gestures = [];
@@ -175,16 +177,22 @@ function GestureDetector(target){
 GestureDetector.prototype = Object.create(EventEmitter.prototype);
 GestureDetector.prototype.constructor = GestureDetector;
 GestureDetector.prototype._start = function(interaction) {
-    interaction.moves = [];
+    interaction.points = [];
+};
+GestureDetector.prototype._drag = function(interaction) {
+    interaction.points.push({
+        x: interaction.pageX,
+        y: interaction.pageY
+    });
 };
 GestureDetector.prototype._end = function(interaction) {
     var detector = this;
     this.gestures.forEach(function(gesture){
-        var gestureName = gesture.call(this, interaction.moves);
+        var gestureName = gesture.call(this, interaction.points);
         if(gestureName){
             detector.emit('gesture', {
                 name: gestureName,
-                moves: interaction.moves
+                points: interaction.points
             });
         }
     });

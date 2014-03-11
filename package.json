@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/MauriceButler/konami-js",
   "dependencies": {
-    "konami-touch": "0.0.1",
-    "konami-keyboard": "0.0.1"
+    "konami-touch": "^0.0.3",
+    "konami-keyboard": "^0.0.1"
   }
 }
