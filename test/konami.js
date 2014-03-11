@@ -1,5 +1,7 @@
 var Konami = require('../');
 
-new Konami(function(){
+var konami = new Konami();
+
+konami.on('konami', function(){
     alert('KONAMI!');
 });
